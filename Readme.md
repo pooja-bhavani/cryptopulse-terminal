@@ -98,8 +98,12 @@ We instrumented our developer environment using Sentry's AI tracking CLI tool:
 ```bash
 npx @sentry/ai install "Please enable Sentry tracing in my app."
 ```
+<img width="1470" height="956" alt="Screenshot 2026-08-13 at 4 20 28 PM" src="https://github.com/user-attachments/assets/8e7c4bb9-ffed-4e83-ae25-e4c09cff0bc3" />
 
 Once installed, restart your Claude Code terminal agent (claude) to let Sentry monitor commands, LLM token usages, and file modifications in real-time.
+
+<img width="1470" height="885" alt="image" src="https://github.com/user-attachments/assets/0e77054a-1e6d-4518-93f1-9d69bd366f0c" />
+
 
 ## Local Testing Instructions
 Ensure Sentry is receiving errors and transaction telemetry from your local workspace:
@@ -109,6 +113,8 @@ Ensure Sentry is receiving errors and transaction telemetry from your local work
 npm run dev
 ```
 Open your browser to http://localhost:5173.
+
+<img width="1470" height="885" alt="image" src="https://github.com/user-attachments/assets/3758fdb5-0c8b-4fc6-aee1-dc1ca37cb6a7" />
 
 2. Disable Ad-Blockers & Privacy Shields (Crucial)
 Sentry outbound network packets (envelopes) can be classified as tracking. To guarantee Sentry telemetry reaches your dashboard:
