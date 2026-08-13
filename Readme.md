@@ -25,6 +25,8 @@ I resolved this by applying a multi-layered defensive React model that completel
 
 3. **Optional Chaining and Fallback UI:** Even if an edge-case slips past our initial boundaries, cryptoData?.bitcoin?.usd guarantees the component evaluates to undefined and renders "N/A" safely. A clean, visual error-boundary screen allows the user to click "Retry Connection" to recover gracefully.
 
+<img width="512" height="512" alt="defensive_react_shield" src="https://github.com/user-attachments/assets/e5e7f991-e12b-4f89-8798-a323f6656d18" />
+
 ## Getting Started & Installation
 Follow these instructions to run the project locally and inspect the codebase.
 
