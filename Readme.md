@@ -17,11 +17,13 @@ Because TypeScript types are checked at compile-time rather than runtime, our st
 This unhandled error bubbled up, bypassed our React lifecycle, and rendered a blank white screen for the trader.
 
 ## The Resilient Defensive Architecture
-We resolved this by applying a multi-layered defensive React model that completely isolates client-side rendering from unstable external APIs:
+I resolved this by applying a multi-layered defensive React model that completely isolates client-side rendering from unstable external APIs:
 
-HTTP Status Verification (res.ok): We actively check the HTTP status before attempting to parse the JSON payload. If the external API rate-limits us (HTTP 429) or encounters an internal failure (HTTP 500), we intercept the cycle immediately and throw a descriptive error.
-Schema and Node Validation: We ensure that the essential object branches (bitcoin, ethereum) exist before modifying the React state. This guarantees that any unexpected schema drift is gracefully caught as an error rather than a runtime crash.
-Optional Chaining and Fallback UI: Even if an edge-case slips past our initial boundaries, cryptoData?.bitcoin?.usd guarantees the component evaluates to undefined and renders "N/A" safely. A clean, visual error-boundary screen allows the user to click "Retry Connection" to recover gracefully.
+1. **HTTP Status Verification (res.ok):** We actively check the HTTP status before attempting to parse the JSON payload. If the external API rate-limits us (HTTP 429) or encounters an internal failure (HTTP 500), we intercept the cycle immediately and throw a descriptive error.
+
+2. **Schema and Node Validation:** We ensure that the essential object branches (bitcoin, ethereum) exist before modifying the React state. This guarantees that any unexpected schema drift is gracefully caught as an error rather than a runtime crash.
+
+3. **Optional Chaining and Fallback UI:** Even if an edge-case slips past our initial boundaries, cryptoData?.bitcoin?.usd guarantees the component evaluates to undefined and renders "N/A" safely. A clean, visual error-boundary screen allows the user to click "Retry Connection" to recover gracefully.
 
 ## Getting Started & Installation
 Follow these instructions to run the project locally and inspect the codebase.
