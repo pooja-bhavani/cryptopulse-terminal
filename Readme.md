@@ -135,4 +135,7 @@ To test if Sentry is connected properly:
 - Click around the CryptoPulse application to trigger CoinGecko API calls.
 
 - Inspect the outgoing HTTP requests inside Sentry's Explore ➡️ Traces dashboard to watch transaction spans representing page loads and API lookups.
-Built with passion, debugged with Sentry, and engineered for resilience.
+
+<img width="1470" height="882" alt="Screenshot 2026-08-13 at 6 01 57 PM" src="https://github.com/user-attachments/assets/b9132815-7406-46e0-9090-3617573fd60f" />
+
+**Built with passion, debugged with Sentry, and engineered for resilience.**
