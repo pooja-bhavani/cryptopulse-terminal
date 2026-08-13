@@ -11,9 +11,9 @@ To maintain a zero-server footprint, the client polls free public crypto pricing
 
 Because TypeScript types are checked at compile-time rather than runtime, our state was blindly set with an unexpected payload. On re-render, the React component attempted to read nested values on an undefined object:
 
-```
-const price = marketData.bitcoin.usd; // 💥 TypeError: Cannot read properties of undefined (reading 'usd')
-```
+
+`const price = marketData.bitcoin.usd; // 💥 TypeError: Cannot read properties of undefined (reading 'usd')`
+
 This unhandled error bubbled up, bypassed our React lifecycle, and rendered a blank white screen for the trader.
 
 ## The Resilient Defensive Architecture
